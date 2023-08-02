@@ -1,0 +1,288 @@
+<html>
+	<head>
+		<title>order_pay</title>
+		<style>
+			.container1{
+				display: flex;
+				height: 700px;
+				width : 1000px;
+				background-color: #61876E;
+				margin:auto;
+				border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+				
+			}
+			.flexitem{
+				display:flex;
+				height: 700px;
+				width:500px;
+				background-color: #A6BB8D;
+				border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+			flex-direction:column;
+			}
+			
+			.flexitem3{
+				display:flex;
+				height: 700px;
+				width:500px;
+				background-color: #A6BB8D;
+				border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+			flex-direction:column;
+			}
+			
+			.flexitem2{
+				display:flex;
+				height: 15%;
+				width:490px;
+				margin:5px;
+				background-color: #EAE7B1;
+				border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+			}
+			
+			.image-box{
+				display:flex;
+				height: 15%;
+				width:100px;
+				margin:5px;
+				background-color: #EAE7B1;
+			}
+			
+			.about{
+				display:flex;
+				height: 15%;
+				width:300px;
+				margin:30px;
+				background-color: #EAE7B1;
+			}
+			
+			.price{
+				display:flex;
+				height: 15%;
+				width:90px;
+				margin:50px;
+				background-color: #EAE7B1;
+			}
+			
+			.final{
+				display:flex;
+				height: 30%;
+				width:490px;
+				margin:auto;
+				background-color: #EAE7B1;
+				border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+		}
+			
+			.finals{
+				display:flex;
+				height: 10%;
+				width:245px;
+				margin:5px;
+				background-color: #EAE7B1;
+				border-radius: 20px;
+			}
+			
+			.btn{
+				border: none;
+				width: 30px;
+				height: 20px;
+				background: white;
+				color: black;
+			}
+			
+			marquee {
+  background: #EAE7B1;
+  margin: 5px;
+  display: block;
+  color: black;
+  border-radius: 20px;
+			box-shadow: 0px 25px 40px grey;
+}
+			.ticker-left li {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+	
+				
+			
+		</style>
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+				$(document).ready(function(){
+					$("#but").click(function(){
+						$(".final").slideToggle("slow");
+					});
+				});
+				$(document).ready(function(){
+					$("#rupay").hide()== true;
+					$("#drop").change(function(){
+						if($("#drop").val()=="RUPAY"){
+						$("#rupay").show();
+						$("#visa").hide()=true;
+					}
+				});
+				$("#drop").change(function(){
+						if($("#drop").val()=="VISA"){
+						$("#visa").show();
+						$("#rupay").hide()=true;
+					}
+					});
+				});
+				
+				$(document).ready(function(){
+					$("#cd").hide();
+					$("#paym").hide();
+					$("#visa").hide();
+					$("#carddet").hide();
+					$("#cardhold").hide();
+					$("#exp").hide();
+					$("#cvc").hide();
+					$("#upii").hide();
+					$("#upip").hide();
+					$("#card").click(function(){
+						$("#paym").show();
+						$("#visa").show();
+						$("#carddet").show();
+						$("#cardhold").show();
+						$("#exp").show();
+						$("#cvc").show();
+						$("#upii").hide();
+						$("#upip").hide();
+						$("#rupay").hide();
+					});
+					$("#upi").click(function(){
+						$("#upii").show();
+						$("#cd").hide();
+						$("#paym").hide();
+						$("#visa").hide();
+						$("#carddet").hide();
+						$("#cardhold").hide();
+						$("#exp").hide();
+						$("#cvc").hide();
+						$("#upip").show();
+						$("#rupay").hide();
+				});
+			});
+					
+					function confirm(){
+						alert("your order has been confirmed");
+						window.location.replace("D:\\VIT\\sem 4\\WEB TECH\\projects\\slider.html");
+					}	
+					
+		</script>
+	</head>
+	
+	<body bgcolor = "#3C6255">
+		<div class = "container1">
+			<div class = "flexitem">
+				<marquee direction="left" height="40px" width="490px">
+					<ul class = "ticker-left" style="margin:auto">
+						<li>Order Summary</li>
+						</ul>
+					</marquee><br>
+					<div class = "flexitem2">
+						<div class = "image-box">
+							<img src ="D:\VIT\sem 4\WEB TECH\projects\apple_juice-removebg-preview.png" style="height:90px;">
+						</div>
+						<p class = "about">Appyy Fizz<br>
+							Quantity - 100ml</p>
+							<p class ="price" id ="1">Rs.200</p>
+					</div>
+					<div class = "flexitem2">
+						<div class = "image-box">
+							<img src ="D:\VIT\sem 4\WEB TECH\projects\burger.png" style="height:70px; width:45px; margin:10px">
+						</div>
+						<p class = "about">Cheese Burger<br>
+							Quantity - 1</p>
+							<p class ="price" id="2">Rs.500</p>
+					</div>
+					<div class = "flexitem2">
+						<div class = "image-box">
+							<img src ="D:\VIT\sem 4\WEB TECH\projects\dosa_bg-removebg-preview.png" style="height:90px; width:60px; margin:5px">
+						</div>
+						<p class = "about">Masala Dosa<br>
+							Quantity - 1</p>
+							<p class ="price" id="3">Rs.100</p>
+					</div><br><br>
+					<button style="background-color: #A6BB8D;border-radius: 20px;box-shadow: 0px 25px 40px grey;" id="but">Total</button>
+					
+					<div class = "final">
+						<table style="margin:auto; width:100%; height:100%">
+							<tr>
+								<td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CGST(2.5%)&nbsp;&nbsp;&nbsp;&nbsp;-</p></td>
+								<td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.20</p>
+								</td>
+							</tr>
+							<tr>
+								<td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SGST(2.5%)&nbsp;&nbsp;&nbsp;&nbsp;-</p></td>
+								<td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.20</p>
+								</td>
+							</tr>
+							<tr>
+								<td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL&nbsp;&nbsp;&nbsp;&nbsp;-</p></td>
+								<td id="tot"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.840</p>
+								</td>
+							</tr>
+						</table>
+						
+						
+					</div>
+					
+			</div>
+			
+			<div class ="flexitem3">
+				<table style="margin:auto; width:500px; height:700px; padding:8px">
+					<tr>
+						<td><div style="background-color:#EAE7B1; width: 210px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">select your payment method :</div></td>
+						<td><div style="background-color:#EAE7B1; width: 70px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px"><input type ="radio" name ="pay" value ="UPI" id ="upi">UPI</div></td>
+						<td><div style="background-color:#EAE7B1; width: 70px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px"><input type ="radio" name ="pay" value ="CARD" id ="card">CARD</div></td>
+					</tr>
+					<tr id ="paym">
+						<td><div style="background-color:#EAE7B1; width: 200px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">Please select your card :</div></td>
+						<td><select name = "dropdown" style ="background-color:#EAE7B1; width: 80px; height:33px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px" id = "drop"><option value ="VISA" selected>VISA</option>
+						<option value ="RUPAY">RUPAY</option></select></td>
+					</tr>
+					<tr id="visa" style ="width:500px; height:200px">
+						<td colspan ="3"><img src ="D:\VIT\sem 4\WEB TECH\projects\visa-removebg-preview.png" style =" width: 400px; height: 200px; margin:auto"></td>
+					</tr>
+					<tr id ="rupay" style ="width:500px; height:200px">
+						<td colspan ="3"><img src ="D:\VIT\sem 4\WEB TECH\projects\rupay-removebg-preview.png" style =" width: 400px; height: 200px; margin:auto"></td>
+					</tr>
+					<tr id="carddet">
+						<td><div style="background-color:#EAE7B1; width: 120px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">Card Number :</td>
+						<td><input type = "text" name = "cardno" id = "cardno"></td>
+					</tr>
+					<tr id ="cardhold">
+						<td><div style="background-color:#EAE7B1; width: 120px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">Card Holder :</td>
+						<td><input type = "text" name = "cardhold" id = "cardhol"></td>
+					</tr>
+					<tr id ="exp">
+						<td><div style="background-color:#EAE7B1; width: 120px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">Expires :</td>
+						<td><input type = "text" name = "exp" id = "expi"></td>
+					</tr>
+					<tr id ="cvc">
+						<td><div style="background-color:#EAE7B1; width: 120px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">CVC :</td>
+						<td><input type = "text" name = "cvc" id = "cvcs"></td>
+					</tr>
+					<tr id="upip" style ="width:500px; height:200px">
+						<td colspan ="3"><img src ="D:\VIT\sem 4\WEB TECH\projects\UPI-removebg-preview.png" style =" width: 400px; height: 200px; margin:auto"></td>
+					</tr>
+					<tr id ="upii">
+						<td><div style="background-color:#EAE7B1; width: 120px; height:20px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px">UPI ID :</td>
+						<td><input type = "text" name = "upii" id = "upii"></td>
+					</tr>
+					<tr >
+						<td colspan ="3" style="margin:auto"><button name = "confirm" id ="butt" onclick ="confirm()" style="background-color:#61876E; width: 120px; height:30px; border-radius: 20px; box-shadow: 0px 25px 40px grey; padding:5px;">Checkout</button></td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+	</body>
+</html>

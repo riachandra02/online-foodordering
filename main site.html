@@ -1,0 +1,157 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+<title>login</title>
+<style>
+.container
+ {
+	display : flex;
+	width : 600px;
+	height : 650px;
+	background-color : white;
+	justify-content : center;
+	text-color : black;
+	opacity : 0.7;
+	
+ }
+ 
+ .container2{
+	 display : flex;
+	 width : 600px;
+	 height : 400px;
+	 background-color : white;
+	 justify-content : center;
+	 opacity : 0.6;
+	 margin : 120px;
+	 border : solid;
+	border-color : white;
+	border-width : 8px;
+ }
+
+.item
+	{
+		background-color : black;
+		width : 200 px ;
+		height : 400px;
+		margin : 140px;
+		padding : 20px;
+		border: #ff7a59 solid 3px;
+		color : white;
+	}
+
+a:link{
+	color : white;
+}
+
+a:visited{
+	color:white;
+}
+a:hover{
+	color : red;
+}
+
+.button {
+  border: none;
+  background: white;
+  color: black;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.button:hover{
+  color: white;
+  border: #ff7a59 solid 1px;
+  background:black;
+}
+
+marquee {
+  background: #333;
+  margin: 30px auto;
+  display: block;
+  color: #fff;
+}
+
+.ticker-left li {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+
+</style>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){
+		$("#uname").focus(function(){
+			$(this).css("background-color","#FFE5B4");
+		});
+		$("#uname").blur(function(){
+			$(this).css("background-color","lightgreen");
+		});
+	});
+	
+	$(document).ready(function(){
+		$("#passw").focus(function(){
+			$(this).css("background-color","#FFE5B4");
+		});
+		$("#passw").blur(function(){
+			$(this).css("background-color","lightgreen");
+		});
+	});
+	
+	function validateForm(){
+var name = document.getElementById("uname");
+var passw = document.getElementById("passw");
+var uname = document.forms["form1"]["uname"].value;
+if(name.validity.patternMismatch){
+alert("Please enter a valid username");
+return false;
+}
+if(passw.validity.patternMismatch){
+alert("Please enter valid password");
+return false;
+}
+if (uname == "")
+{
+alert("Please input a Value");
+return false;
+}
+}
+
+</script>
+</head>
+<body background = "D:\VIT\sem 4\WEB TECH\projects\bg.avif">
+	<div class = "container2" style = "float: left">
+		<img src = "D:\chrome downloads\station-7767132.jpg" style = "width : 100%; height : 100%">
+</div>
+	<div class = "container"  style = "margin-left: 60%">
+		<div class  = "item">
+			<h2 style = "text-align : center; background-color: neon green"><u><b>LOGIN</u></b></h2><br>
+			<form action ="D:\VIT\sem 4\WEB TECH\projects\Frames.html" name = "form1">
+				<br><b>USERNAME :&nbsp</b><input type = "text" name = uname placeholder = "enter your username" id = "uname"  pattern = "[A-Za-z]{1,30}"></input><br><br>
+				<br><b>PASSWORD :&nbsp</b><input type = "password" name = passw placeholder = "password" id = "passw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></input><br><br><br>
+				<p style = "text-align:center"><input class = "button" type = submit onclick = "validateform()" value = "LOGIN"></input></p>
+				<br><b><a href = "D:\VIT\sem 4\WEB TECH\projects\forget_pass.html" style = "font-family: garamond">Forget password?</b></a><br>
+				<br><b><a href = "D:\VIT\sem 4\WEB TECH\projects\signup.html" style = "font-family: garamond">Sign up</b></a>
+			</form>
+		
+		</div>
+</div>
+
+<marquee direction="left" height="40px" width="1200px" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+  <ul class="ticker-left" style="margin:auto">
+    <li>welcome to our site!!!
+    </li>
+    <li>best food!!!</li>
+    <li>fast service!!!</li>
+    <li>lowest price!!!</li>
+</marquee>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #3C6255;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.Cart-Container{
+			width: 70%;
+			height: 85%;
+			background-color: #A6BB8D;
+			border-radius: 20px;
+			box-shadow: 0px 10px 20px #E6E5A3;
+		}
+		.Header{
+			margin: auto;
+			font-size: 35px;
+			text-align: center;
+			font-family: Garamond;
+			text-shadow: 1px 1px 0 #E6E5A3, 1px 2px 0 #E6E5A3, 1px 3px 0 #E6E5A3;
+		}
+		.Heading{
+			font-size: 50px;
+			font-family: ‘Open Sans’;
+			font-weight: 700;
+			color: #2F3841;
+		}
+		form{
+			margin: 0px;
+			padding: 0 200px;
+			font-size: 20px;
+			text-align: center;
+			font-family: Garamond;
+			text-shadow: 1px 1px 0 #E6E5A3, 1px 2px 0 #E6E5A3, 1px 3px 0 #E6E5A3;
+		}
+		#input{
+			border-radius: 25px;
+			border: 2px solid #609;
+			padding: 20px; 
+			width: 500px;
+			height: 15px;
+			box-shadow: 0px 10px 20px #E6E5A3;
+		}	
+			
+	</style>
+	<body>
+		<div class="Cart-Container">
+			<div class="Header">
+				<h3 class="Heading">Fill in the delivery details</h3>
+			</div>
+<form ng-app="myApp" ng-controller="validateCtrl"
+name="myForm" novalidate action ="D:\VIT\sem 4\WEB TECH\projects\orderpay.html">
+<p>Full Name<br>
+<input type="text" name="user" ng-model="user" id="input" required><br>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Name is required.</span>
+</span>
+</p>
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" id="input" required><br>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span></p>
+<p>PNR<br>
+<input type="text" name="pnr" ng-model="pnr" id="input" ng-pattern="/^[0-9][A-Z]{1,6}$/" required><br>
+<span style="color:red" ng-show="myForm.pnr.$dirty && myForm.pnr.$invalid">
+<span ng-show="myForm.pnr.$error.required">PNR is required.</span>
+</span></p>
+<p>Seat Number<br>
+<input type="text" name="snr" ng-model="snr" id="input" required><br>
+<span style="color:red" ng-show="myForm.snr.$dirty && myForm.snr.$invalid">
+<span ng-show="myForm.snr.$error.required">Seat Number is required.</span>
+</span></p>
+</p>
+<p>
+<input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+</p>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+$scope.user;
+$scope.email;
+});
+</script>
+		</div>
+	</body>
+</html>

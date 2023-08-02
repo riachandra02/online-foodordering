@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<title>slider</title>
+		<style>
+			* {box-sizing:border-box}
+
+.slideshow-container {
+  width : 1500px;
+  height : 500px;
+  justify-content: center;
+}
+
+.mySlides {
+	
+  display: none;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.active{
+  background-color: #717171;
+}
+
+a:link{
+	color:white;}
+	
+a:hover{
+	color:red;}
+	
+	.container{
+		display:flex;
+		width:1500px;
+		height:350px; 
+		background-color:#3C6255; 
+		color:#EAE7B1; 
+	}
+	
+	.item{
+		width:300px;
+		height:300px;
+		margin:50px;
+		background-color:#3C6255;
+	}
+	
+	@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+	.item:hover {
+  animation: bounce 1s;
+}
+	
+
+	
+	.container2{
+		width:300px;
+		height:100px;
+		margin:10px;
+	}
+
+	</style>
+	
+	<script>
+		let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].className += " active";
+}
+	
+	</script>
+	
+	<body bgcolor ="#EAE7B1" >
+		
+<div class="slideshow-container">
+
+  
+  <div class="mySlides" style = "display:block">
+    <img src="D:\chrome downloads\pancakes-2291908.jpg" style="width:1500px; height:500px">
+  </div>
+
+  <div class="mySlides">
+    <img src="D:\chrome downloads\pizza-3010062.jpg" style="width:1500px; height:500px">
+  </div>
+
+  <div class="mySlides">
+    <img src="D:\chrome downloads\vegetable-skewer-3317060.jpg" style="width:1500px; height:500px">
+  </div>
+
+  
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div class = "container">
+	<h2 style = "text-align : center;family-font:arial; margin:10px"><b>POPULAR ITEMS</b></h2><br>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\chrome downloads\fresh-jalebi-818316.jpg" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:23%">JALEBI</p></a></div>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\chrome downloads\indian-1768906.jpg" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:25%">DOSA</p></a></div>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\chrome downloads\sweets-577230.jpg" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:20%">RASGULLA</p></a></div>
+	
+	
+</div><Br>
+
+<div class = "container">
+	<h2 style = "text-align : center;family-font:arial; margin:10px"><b>FOOD OUTLETS&nbsp&nbsp&nbsp</b></h2><br>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\VIT\sem 4\WEB TECH\projects\dominos.png" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:23%">DOMINOS</p></a></div>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\VIT\sem 4\WEB TECH\projects\download.png" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:18%">SAGAR RATNA</p></a></div>
+	<div class = "item"><a href = "D:\VIT\sem 4\WEB TECH\projects\menu\menu_pics\menu.html"><img src = "D:\VIT\sem 4\WEB TECH\projects\mcd.jfif" style = "width : 200px; height:200px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:20%">MC'DONALDS</p></a></div>
+	
+	
+</div><br>
+
+<div class = "container">
+	<h2 style = "text-align : center;family-font:arial; margin:10px"><b>CONTACT US</b></h2><br>
+	<div class = "item"><a href = "insta"><img src = "D:\VIT\sem 4\WEB TECH\projects\insta.webp" style = "width : 100px; height:100px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:4%">INSTAGRAM</p></a></div>
+	<div class = "item"><a href = "whats"><img src = "D:\VIT\sem 4\WEB TECH\projects\whatsapp1.png" style = "width : 100px; height:100px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:4%">WHATSAPP</p></a></div>
+	<div class = "item"><a href = "insta"><img src = "D:\VIT\sem 4\WEB TECH\projects\Facebook_logo_(square).png.webp" style = "width : 100px; height:100px; border:solid; border-color:white; border-width:5px;"><br><p style = "margin-left:4%">FACEBOOK</p></a></div>
+	<h4 style = "text-align : center;family-font:arial; margin:10px"><b>MOBILE NO. - 9810382299</b></h2><br>
+	
+	</body>

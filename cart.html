@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+			
+		
+		
+		$(document).ready(function(){
+			var data_appy = 1;
+			var data = 1;
+  
+			document.getElementById("counting_appy").innerText = data_appy;
+			$("#9").click(function(){
+				data_appy = data_appy + 1;
+				document.getElementById("counting_appy").innerText = data_appy;
+			});
+			$("#7").click(function(){
+				if(data_appy==1){
+					if(confirm("Item will be removed from the cart!!")==true){
+						text = "Item removed!!";
+					}
+					else{
+						text = "you canceled!";
+					}
+				}
+				else{
+					data_appy = data_appy - 1;
+					document.getElementById("counting_appy").innerText = data_appy;
+				}
+			});
+
+			document.getElementById("counting").innerText = data;
+			$("#20").click(function(){
+				data = data + 1;
+				document.getElementById("counting").innerText = data;
+			});
+			$("#19").click(function(){
+				if(data==1){
+					if(confirm("Item will be removed from the cart!!")==true){
+						text = "Item removed!!";
+					}
+				else{
+					text = "you canceled!";
+				}
+			}
+			else{
+				data = data - 1;
+				document.getElementById("counting").innerText = data;
+			}
+		});
+			$(".remove").click(function(){
+				$("#1").remove();
+			});
+			
+			$(".Action").click(function(){
+				console.log("abc");
+				$(".Cart-Items").remove();
+			});
+		});
+		</script>
+	</head>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #3C6255;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+		.Cart-Container{
+			width: 70%;
+			height: 85%;
+			background-color: #A6BB8D;
+			border-radius: 20px;
+			box-shadow: 0px 10px 20px #E6E5A3;
+			}
+		.Header{
+			margin: auto;
+			width: 90%;
+			height: 15%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			}
+		.Heading{
+			font-size: 20px;
+			font-family: ‘Open Sans’;
+			font-weight: 700;
+			color: #2F3841;
+			}
+		.Action{
+			font-size: 14px;
+			font-family: ‘Open Sans’;
+			font-weight: 600;
+			color: #E44C4C;
+			cursor: pointer;
+			border-bottom: 1px solid #E44C4C;
+			
+			}
+		.Cart-Items{
+			margin: auto;
+			width: 90%;
+			height: 30%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.image-box{
+			width: 15%;
+			text-align: center;
+		}
+		.about{
+			height: 70%;
+		}
+		.title{
+			padding-top: 5px;
+			line-height: 10px;
+			font-size: 32px;
+			font-family: ‘Open Sans’;
+			font-weight: 800;
+			color: #202020;
+		}
+		.subtitle{
+			line-height: 10px;
+			font-size: 18px;
+			font-family: ‘Open Sans’;
+			font-weight: 600;
+			color: #909090;
+		}
+		.counter{
+			width: 15%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.btn{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #EAE7B1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 20px;
+			font-family: ‘Open Sans’;
+			font-weight: 900;
+			color: #202020;
+			cursor: pointer; 
+		}
+		.count{
+			font-size: 20px;
+			font-family: ‘Open Sans’;
+			font-weight: 900;
+			color: #202020;
+		}
+		.prices{
+			height: 50%;
+			text-align: right;
+		}
+		.amount{
+			padding-top: 20px;
+			font-size: 26px;
+			font-family: ‘Open Sans’;
+			font-weight: 800;
+			color: #202020;
+		}
+		.remove{
+			padding-top: 5px;
+			font-size: 14px;
+			font-family: ‘Open Sans’;
+			font-weight: 600;
+			color: #E44C4C;
+			cursor: pointer;
+		}
+		hr{
+			width: 66%;
+			float: right;
+			margin-right: 5%;
+		}
+		.checkout{
+			float: right;
+			margin-right: 5%;
+			width: 28%;
+		}
+		.total{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		.Subtotal{
+			font-size: 22px;
+			font-family: ‘Open Sans’;
+			font-weight: 700;
+			color: #202020;
+		}
+		.items{
+			font-size: 16px;
+			font-family: ‘Open Sans’;
+			font-weight: 500;
+			color: #909090;
+			line-height: 10px;
+		}
+		.total-amount{
+			font-size: 36px;
+			font-family: ‘Open Sans’;
+			font-weight: 900;
+			color: #202020;
+		}
+		.button{
+			margin-top: 5px;
+			width: 100%;
+			height: 40px;
+			border: none;
+			background-color: #EAE7B1;
+			border-radius: 20px;
+			cursor: pointer;
+			font-size: 16px;
+			font-family: ‘Open Sans’;
+			font-weight: 600;
+			color: #202020;
+		}
+	</style>
+	<body>
+		<div class="Cart-Container">
+		<div class="Header">
+		<h3 class="Heading">Shopping Cart</h3>
+		<h5 class="Action">Remove all</h5>
+		</div>
+		<div class="Cart-Items" id ="1">
+		<div class="image-box" id ="2">
+		<img src="D:\VIT\sem 4\WEB TECH\projects\apple_juice-removebg-preview.png" style={{ height="120px" }} />
+		</div>
+		<div class="about" id ="3">
+		<h1 class="title" id ="4">Apple Juice</h1>
+		<h3 class="subtitle" id ="5">Quantity: 250ml</h3>
+		<img src="D:\VIT\sem 4\WEB TECH\projects\veg.jpeg"style={{ height="30px" }}/>
+		</div>
+		<div class="counter" id ="6">	
+		<button class="btn" id ="7">-</button>
+        <h2 id="counting_appy" id ="8">1</h2>
+        <button class="btn" id ="9">+</button>
+        </div>
+        <div class="prices" id ="10">
+		<div class="amount" id ="11">Rs.40</div>
+		<div class="remove" id="12"><u>Remove</u></div>
+        </div>
+		</div>
+		
+		<div class="Cart-Items" id ="13">
+		<div class="image-box" id ="14">
+		<img src="D:\VIT\sem 4\WEB TECH\projects\burger.png" style={{ height="120px" }} />
+		</div>
+		<div class="about" id="15">
+		<h1 class="title" id ="16">Tripple Cheeseburger</h1>
+		<h3 class="subtitle" id="17">Quantity: 1</h3>
+		<img src="D:\VIT\sem 4\WEB TECH\projects\veg.jpeg" style={{ height="30px" }}/>
+		</div>
+		<div class="counter" id ="18">	
+		<button class="btn" id ="19">-</button>
+        <h2 id="counting">1</h2>
+        <button class="btn" id="20">+</button>
+        </div>
+        <div class="prices" id ="21">
+		<div class="amount" id="22">Rs.215</div>
+		<div class="remove" id="23"><u>Remove</u></div>
+        </div>
+		</div>
+		<hr> 
+		<div class="checkout" id ="24">
+		<div class="total" id ="25">
+		<div>
+		<div class="Subtotal" id ="26">Sub-Total</div>
+		<div class="items" id ="27">2 items</div>
+		</div>
+		<div class="total-amount" id ="28">Rs. 255</div>
+		</div>
+		<a href="D:\VIT\sem 4\WEB TECH\projects\delivery_details.html">Checkout</a>
+		</div>
+		</div>
+		
+		<
+	</body>
+</html>

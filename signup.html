@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>SIGNUP</title>
+		<style>
+			.container{
+				display : flex;
+				width : 600px;
+				height : 730px;
+				background-color : white;
+				justify-content : center;
+				text-color : black;
+				opacity : 0.6;
+				}
+				
+			.item{
+				background-color : black;
+				color: white;
+				width : 300 px ;
+				height : 400px;
+				margin : 100px;
+				padding : 20px;
+				border : ridge;
+				border-width : 5px;
+				border-color: black;
+			}
+			
+			.button {
+  border: none;
+  background: white;
+  color: black;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.button:hover{
+  color: white;
+  border: #ff7a59 solid 1px;
+  background:black;
+}
+		
+		</style>
+		
+		<script>
+	function validateForm(){
+	var name = document.getElementById("uname");
+	var passw = document.getElementById("passw");
+	var mail = document.getElementById("email");
+	var repassw = document.getElementById("repass");
+	if(name.validity.patternMismatch){
+		alert("Please enter a valid username");
+	return false;
+	}
+	if(passw.validity.patternMismatch){
+	alert("Please enter valid password");
+	return false;
+	}
+	if(mail.validity.patternMismatch){
+	alert("please enter valid E-mail");
+}
+	if(repass.validity.patternMismatch){
+		alert("please enter valid password");
+	}
+
+</script>
+	
+	</head>
+	<body background = "D:\VIT\sem 4\WEB TECH\projects\bg.avif">
+		<div class = "container" style = "margin-left:30%">
+			<div class = "item">
+							<h2 style = "text-align : center;"><u><b>SIGN UP</u></b></h2><br>
+				<form action = "D:\VIT\sem 4\WEB TECH\projects\site.html">
+					<br><b>USERNAME :&nbsp</b><input type = "text" name = uname placeholder = "enter your username" id = "uname" pattern = "[A-Za-z]{1,30}"></input><br><br>
+					<b><label for="email">ENTER YOUR EMAIL:</label></b>
+					<input type="email" id="email" name="email" placeholder = "eg:- abc@gmail.com" id = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+				<br><b>PASSWORD :&nbsp</b><input type = "password" name = passw placeholder = "create a password" id = "passw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></input><br>
+				<br><b>CONFIRM PASSWORD :&nbsp</b><input type = "password" name = passw placeholder = "re-enter password" id = "repass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></input><br><br><br>
+				<p style = "text-align:center"><input class = "button" type = submit value = "SIGNUP"></input></p>
+				</form>
+			
+			</div>
+		
+		</div>
+	
+	</body>
+
+</html>

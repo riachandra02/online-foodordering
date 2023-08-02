@@ -1,0 +1,29 @@
+<html>
+<head>
+<script language = "javascript" type = "text/javascript">
+var hours = prompt("Enter number of hours");
+var charge;
+function calculate_Charges(){
+if(hours < 3){
+charge = 2.00;
+document.write("You have to pay $" + charge);
+}
+else if(hours > 3){
+hours = hours - 3;
+charge = 2 + (hours*0.5);
+if(charge > 10){
+document.write("You have to pay $10");
+}
+else{
+document.write("You have to pay $" + charge);
+}
+}
+}
+</script>
+</head>
+<body>
+To calculate parking charges <br>
+<form>
+<input type = "button" onclick = "calculate_Charges()" value = "Calculate">
+</form>
+</html>
